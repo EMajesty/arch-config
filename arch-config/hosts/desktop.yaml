@@ -1,0 +1,7 @@
+host: desktop
+hostname: psyche
+description: Bare bones desktop host
+
+enabled_modules:
+  - base
+  - desktop

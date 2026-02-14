@@ -1,0 +1,7 @@
+host: laptop
+hostname: antares
+description: Bare bones laptop host
+
+enabled_modules:
+  - base
+  - laptop

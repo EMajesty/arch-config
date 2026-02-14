@@ -1,0 +1,6 @@
+description: Laptop-only packages and services
+
+packages:
+  # Power management
+  - brightnessctl
+  - power-profiles-daemon

@@ -1,0 +1,135 @@
+description: Core packages and base desktop stack
+
+packages:
+  # Core system
+  - git
+  - openssh
+  - zsh
+
+  # Desktop/WM
+  - hyprland
+  - waybar
+  - wofi
+
+  # Terminal
+  - kitty
+  - neovim
+  - tmux
+
+  # Shell and UX
+  - eza
+  - fastfetch
+  - oh-my-posh
+  - zsh-autosuggestions
+  - zsh-syntax-highlighting
+
+  # File management
+  - nautilus
+  - udiskie
+  - udisks2
+
+  # Portals/desktop integration
+  - xdg-desktop-portal
+  - xdg-desktop-portal-hyprland
+
+  # Hyprland extras
+  - hypridle
+  - hyprlock
+  - hyprpaper
+  - hyprpicker
+  - hyprshot
+
+  # Audio
+  - pipewire
+  - pipewire-alsa
+  - pipewire-jack
+  - pipewire-pulse
+  - pavucontrol
+  - wiremix
+  - wireplumber
+
+  # Bluetooth
+  - bluez
+  - blueman
+
+  # Notifications
+  - swaync
+
+  # Fonts
+  - adobe-source-sans-fonts
+  - adobe-source-serif-fonts
+  - cantarell-fonts
+  - noto-fonts
+  - noto-fonts-cjk
+  - noto-fonts-emoji
+  - noto-fonts-extra
+  - ttf-dejavu
+  - ttf-firacode-nerd
+  - ttf-jetbrains-mono-nerd
+  - ttf-liberation
+  - ttf-nerd-fonts-symbols
+
+  # Dev tooling
+  - clang
+  - cmake
+  - gdb
+  - jq
+  - openai-codex
+  - rustup
+
+  # Containers/virtualization
+  - docker
+  - docker-compose
+  - libvirt
+  - qemu-full
+  - virt-manager
+  - virt-viewer
+
+  # Remote access
+  - freerdp
+  - remmina
+
+  # Networking/VPN
+  - mullvad-vpn
+
+  # System tools
+  - btop
+  - efibootmgr
+  - evtest
+  - ntfs-3g
+  - rtkit
+
+  # Archives/compression
+  - 7zip
+  - unzip
+  - xz
+  - zip
+
+  # Media/graphics
+  - eom
+  - ffmpegthumbnailer
+  - tumbler
+
+  # Apps
+  - discord
+  - qbittorrent
+  - rpi-imager
+  - steam
+  - telegram-desktop
+  - zen-browser
+
+  # Misc
+  - age
+  - ark
+  - cmatrix
+  - irssi
+
+ aur:
+  - blueberry
+  - mpc-qt
+  - pokeget
+  - ventoy-bin
+  - vial-git
+  - whatsie
+  - winboat
+  - yay

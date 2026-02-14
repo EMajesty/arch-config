@@ -1,0 +1,61 @@
+@define-color background #0f0f0f;
+@define-color foreground #e6e1cf;
+@define-color accent #fa6161;
+@define-color shadow #0f0f0f;
+
+* {
+  background-color: transparent;
+  color: @foreground;
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-family: Berkeley Mono Variable;
+  text-shadow: 1 1 2px @shadow, 0 0 4px @shadow;
+  font-size: 18px;
+  margin-top: 2px;
+}
+
+.modules-left {
+  margin-left: 8px;
+}
+
+.modules-right {
+  margin-right: 8px;
+}
+
+#workspaces button {
+  all: initial;
+  padding: 0 6px;
+  margin: 0 1.5px;
+  min-width: 9px;
+}
+
+#workspaces button.empty {
+  opacity: 0.5;
+}
+
+#tray,
+#cpu,
+#battery,
+#network,
+#bluetooth,
+#pulseaudio {
+  min-width: 12px;
+  margin: 0 7.5px;
+}
+
+#custom-expand-icon {
+  color: @accent;
+}
+
+tooltip {
+  padding: 2px;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+#mpd {
+  margin-right: 20px;
+}

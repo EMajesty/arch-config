@@ -1,0 +1,14 @@
+description: Desktop-only packages
+
+packages:
+  # Audio
+  - bitwig-studio
+  - renoise
+
+  # Creative
+  - godot
+  - kicad
+  - krita
+
+  # Notes
+  - obsidian

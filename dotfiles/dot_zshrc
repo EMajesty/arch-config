@@ -1,0 +1,43 @@
+# Completion
+autoload -Uz compinit
+compinit
+
+# Plugins (Arch paths)
+if [ -r /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+  source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+if [ -r /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]; then
+  source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+# Aliases
+alias gs="git status"
+alias ls="eza -lh --group-directories-first --icons=auto"
+alias lsa="ls -a"
+alias lt="eza --tree --level=2 --long --icons --git"
+alias lta="lt -a"
+
+# Nix: open dev shells with zsh by default
+nix() {
+  if [[ $1 == develop ]]; then
+    shift
+    for arg in "$@"; do
+      if [[ $arg == "-c" || $arg == "--command" || $arg == "--run" || $arg == "--no-shell" ]]; then
+        command nix develop "$@"
+        return
+      fi
+    done
+    command nix develop "$@" -c zsh
+  else
+    command nix "$@"
+  fi
+}
+
+# Prompt
+if command -v oh-my-posh >/dev/null 2>&1; then
+  if [ -r /usr/share/oh-my-posh/themes/dracula.omp.json ]; then
+    eval "$(oh-my-posh init zsh --config /usr/share/oh-my-posh/themes/dracula.omp.json)"
+  else
+    eval "$(oh-my-posh init zsh)"
+  fi
+fi

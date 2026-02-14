@@ -1,0 +1,7 @@
+active_host: desktop
+
+hosts:
+  desktop:
+    hostname: psyche
+  laptop:
+    hostname: antares
