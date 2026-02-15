@@ -18,7 +18,7 @@ Use `archinstall` and choose:
   - `@snapshots` -> `/.snapshots`
   - `@var_log` -> `/var/log`
   - `@var_cache` -> `/var/cache`
-  - `@swap` -> `/.swap`
+  - `@swap` -> `/swap`
 - Enable **multilib** (in archinstall profile/settings)
 
 After first boot:
@@ -26,12 +26,12 @@ After first boot:
 ### 0.5) Create swap subvolume + swapfile (Btrfs)
 
 ```bash
-sudo btrfs subvolume create /.swap
-sudo chattr +C /.swap
-sudo chmod 700 /.swap
-sudo btrfs filesystem mkswapfile --size 16G /.swap/swapfile
-sudo chmod 600 /.swap/swapfile
-sudo swapon /.swap/swapfile
+sudo btrfs subvolume create /swap
+sudo chattr +C /swap
+sudo chmod 700 /swap
+sudo btrfs filesystem mkswapfile --size 16G /swap/swapfile
+sudo chmod 600 /swap/swapfile
+sudo swapon /swap/swapfile
 ```
 
 Add to `/etc/fstab` (example):
