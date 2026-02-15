@@ -202,10 +202,10 @@ return {
             "bluetooth.service",
             "cups.service",
             "avahi-daemon.service",
-            "ly@tty1.service",
+            "ly@tty2.service",
         },
         disabled = {
-            "getty@tty1.service",
+            "getty@tty2.service",
         },
     },
 }
