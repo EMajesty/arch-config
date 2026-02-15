@@ -12,6 +12,7 @@ Use `archinstall` and choose:
 - Partitioning: **EFI + root**
   - EFI: ~512MB, FAT32, mount `/boot` (or `/boot/efi`)
   - Root: Btrfs
+- Enable **multilib** (in archinstall profile/settings)
 - Subvolumes (flat layout):
   - `@` -> `/`
   - `@home` -> `/home`
@@ -75,8 +76,10 @@ mkdir -p ~/.config
 cp -r ~/.config/arch/arch-config ~/.config/arch-config
 ```
 
-Pick a host and make sure `~/.config/arch-config/config.yaml` has
-`active_host` set correctly (e.g. `desktop` or `laptop`).
+This repo uses Lua configs. `~/.config/arch-config/config.lua` will
+select `hosts/{hostname}.lua` automatically. Make sure your hostname
+matches one of the host files (e.g. `psyche` or `antares`), or create a
+new `hosts/{hostname}.lua`.
 
 ### 4) Apply system + dotfiles with dcli
 
@@ -94,3 +97,13 @@ sudo reboot
 
 After reboot, you should have your dotfiles and the package stack from
 `arch-config/` installed.
+
+### 6) Start user services
+
+dcli does not manage user services yet, so user-level services won’t
+auto-start until enabled or started manually (e.g. `mpd`). Start/enable
+them with:
+
+```bash
+systemctl --user enable --now mpd.service
+```
