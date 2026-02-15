@@ -1,5 +1,15 @@
 description: Core packages and base desktop stack
 
+dotfiles_sync: true
+
+dotfiles:
+  - source: dotfiles-home/zshrc
+    target: ~/.zshrc
+  - source: dotfiles-home/gitconfig
+    target: ~/.gitconfig
+  - source: dotfiles-local/bin/random-hyprpaper.sh
+    target: ~/.local/bin/random-hyprpaper.sh
+
 packages:
   pacman:
   # Core system
@@ -146,7 +156,6 @@ packages:
   - wl-clipboard
   - base-devel
   - linux-headers
-  - linux-firmware
   - xdg-utils
   - man-db
   - man-pages
@@ -176,7 +185,7 @@ packages:
   - protontricks
   - runelite
 
- aur:
+  aur:
   - blueberry
   - mpc-qt
   - pokeget
