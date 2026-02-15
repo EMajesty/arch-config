@@ -12,12 +12,12 @@ Use `archinstall` and choose:
 - Partitioning: **EFI + root**
   - EFI: ~512MB, FAT32, mount `/boot` (or `/boot/efi`)
   - Root: Btrfs
-- Enable **multilib** (in archinstall profile/settings)
 - Subvolumes (flat layout):
   - `@` -> `/`
   - `@home` -> `/home`
   - `@snapshots` (or `@.snapshots`) -> `/.snapshots`
 - Optional subvols: `@var_log` -> `/var/log`
+- Enable **multilib** (in archinstall profile/settings)
 
 After first boot:
 
@@ -40,48 +40,28 @@ Install `dcli` (AUR recommended):
 
 ```bash
 yay -S dcli-arch-git
-# or
-paru -S dcli-arch-git
 ```
 
-If you don’t use an AUR helper, build from source:
+### 2) Clone this repo into .config
 
-```bash
-git clone https://gitlab.com/theblackdon/dcli.git
-cd dcli
-./install.sh
-```
+`dcli` expects configs in `~/.config/arch-config`. Clone this repo
+directly into that path so no copying is needed:
 
-### 2) Clone this repo
-
-```bash
-git clone <your-repo-url-or-path> ~/.config/arch
-cd ~/.config/arch
-```
-
-### 3) Prepare arch-config for dcli
-
-`dcli` expects configs in `~/.config/arch-config`. You have two options:
-
-Option A: use dcli’s bootstrap (creates a starter config):
-
-```bash
-dcli init -b
-```
-
-Option B: use this repo’s `arch-config/`:
+SSH:
 
 ```bash
 mkdir -p ~/.config
-cp -r ~/.config/arch/arch-config ~/.config/arch-config
+git clone git@github.com:EMajesty/arch-config.git ~/.config/arch-config
 ```
 
-This repo uses Lua configs. `~/.config/arch-config/config.lua` will
-select `hosts/{hostname}.lua` automatically. Make sure your hostname
-matches one of the host files (e.g. `psyche` or `antares`), or create a
-new `hosts/{hostname}.lua`.
+HTTPS:
 
-### 4) Apply system + dotfiles with dcli
+```bash
+mkdir -p ~/.config
+git clone https://github.com/EMajesty/arch-config.git ~/.config/arch-config
+```
+
+### 3) Apply system + dotfiles with dcli
 
 Sync your system:
 
@@ -89,16 +69,13 @@ Sync your system:
 dcli sync
 ```
 
-### 5) Reboot
+### 4) Reboot
 
 ```bash
 sudo reboot
 ```
 
-After reboot, you should have your dotfiles and the package stack from
-`arch-config/` installed.
-
-### 6) Start user services
+### 5) Start user services
 
 dcli does not manage user services yet, so user-level services won’t
 auto-start until enabled or started manually (e.g. `mpd`). Start/enable
