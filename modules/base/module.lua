@@ -23,7 +23,7 @@ return {
         "ly",
 
         -- Handling packages
-        "dcli",
+        -- "dcli",
         "yay",
         "nix",
 
