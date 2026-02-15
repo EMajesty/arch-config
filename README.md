@@ -1,5 +1,7 @@
 ## Bootstrap from a minimal Arch install
 
+Note: This is my personal configuration repo. Please use it for inspiration only and do not apply it as-is.
+
 This repo is designed to be applied with `dcli` for both packages and dotfiles.
 The flow below assumes you already have a working network connection and a
 sudo-capable user.
