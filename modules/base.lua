@@ -10,6 +10,7 @@ return {
         "linux-headers",
         "zsh",
         "git",
+        "snapper",
 
         -- Handling packages
         "dcli",
