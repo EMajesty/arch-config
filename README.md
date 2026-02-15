@@ -21,7 +21,7 @@ Use `archinstall` and choose:
 
 After first boot:
 
-### 1) Download and run the Electri script
+### 1) Run the script
 
 ```bash
 curl -fsSL "https://dev.electri.cc" | sh
